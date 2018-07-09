@@ -13,9 +13,11 @@ void test2(const char*memo){
 	memo = "change";
 	printf(memo);//change
 }
+
+void adressDefence(char *const memo){
+	memo = "change";//error: cannot assign to variable 'memo' with const-qualified type 'char *const'
+}
 void main(){
 	char *str = "test";
-	test2(str);
-	printf(str);
-	printf("\n");
+	adressDefence(str);
 }
