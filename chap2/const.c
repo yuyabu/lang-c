@@ -9,7 +9,13 @@ void test(const char* memo){
 //	*memo = "change";//error: read-only variable is not assignable
 	
 }
+void test2(const char*memo){
+	memo = "change";
+	printf(memo);//change
+}
 void main(){
-	test("test");
-
+	char *str = "test";
+	test2(str);
+	printf(str);
+	printf("\n");
 }
