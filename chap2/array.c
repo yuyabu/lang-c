@@ -4,6 +4,10 @@ void test(int *p){
   int n = {3,4,5,6,7};
   p = n;
 }
+void test2(int array[]){
+  *array = 320;
+  printf("array[0] is %d\n",array[0]);
+}
 
 void main(){
   int n[5]={0,1,2,3,4};
@@ -35,9 +39,18 @@ void main(){
   //shortは2づつ伸びる
   printf("s addr is %p\n",s);     //0x7ffee878ea86
   printf("s+1 addr is %p\n",s+1); //0x7ffee878ea88
-  
 
+  test2(n);
 
+  //配列の順番に注意しろ
+  //この形式はOK。長さ５の文字列が３つ
+  char color[3][5] = {
+    "Blue","Gray","Ping"
+  };
+
+  char color2[5][3] = {
+    "Blue","Gray","Ping"
+  };
 
 
 }
