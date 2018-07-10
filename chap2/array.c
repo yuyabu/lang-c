@@ -48,9 +48,29 @@ void main(){
     "Blue","Gray","Ping"
   };
 
+  //これはNG
   char color2[5][3] = {
     "Blue","Gray","Ping"
   };
+  /*
+  int
+chap2/array.c:52:5: warning: initializer-string for char array is too long
+    "Blue","Gray","Ping"
+    ^~~~~~
+chap2/array.c:52:12: warning: initializer-string for char array is too long
+    "Blue","Gray","Ping"
+           ^~~~~~
+chap2/array.c:52:19: warning: initializer-string for char array is too long
+    "Blue","Gray","Ping"
+                  ^~~~~~
+    */
+   //ただしコンパイルはできた。
+
+   puts(color);//blue
+   puts(color[0]);//blue
+
+   puts(color[1]);//Gray
+   puts(color+1); //Gray
 
 
 }
