@@ -1,8 +1,7 @@
 #include<stdio.h>
 
 /**
- * const char* で参照のみを保護する
- * @param value [description]
+ * const char* pで参照先の領域のみを保護する
  */
 void referenceOnlyProtect(const char* p){
 	p = "test"; //書き換え可能。ただし呼び出し元に影響なし。
@@ -13,9 +12,9 @@ void referenceOnlyProtect(const char* p){
 }
 
 /**
- * char const *pで値のみを保護する。
+ * char const *pでポインタの値のみを保護する。
+ * ポインタの指す先が変更できなくなる。
  * 参照は書き換え可能
- * @param p [description]
  */
 void valueOnlyProtect(char* const p){
 	//p = "test";//error: cannot assign to variable 'p' with const-qualified type 'char *const'
@@ -28,6 +27,9 @@ void valueOnlyProtect(char* const p){
 
 }
 
+/**
+ * 参照先、参照そのものも両方保護する。
+ */
 void valueAndReferenceProtect(const char *const p){
 	//p="test";//error: cannot assign to variable 'p' with const-qualified type 'const char *const'
 	//参照の変更は許可されない
