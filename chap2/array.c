@@ -9,6 +9,20 @@ void test2(int array[]){
   printf("array[0] is %d\n",array[0]);
 }
 
+void func1(int array[3][5]){
+  puts(array);
+  puts(array[1]);
+}
+void func2(int array[][5]){
+  puts(array);
+  puts(array[1]);
+}
+void func3(int *array){
+  puts(array);
+  puts(array[1]);
+}
+
+
 void main(){
   int n[5]={0,1,2,3,4};
 
@@ -72,5 +86,10 @@ chap2/array.c:52:19: warning: initializer-string for char array is too long
    puts(color[1]);//Gray
    puts(color+1); //Gray
 
+   printf("size of color is %d\n",sizeof color);
+   //size of color is 15
 
+   func1(color);
+   func2(color);
+   func3(color);
 }
