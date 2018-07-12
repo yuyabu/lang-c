@@ -1,9 +1,9 @@
 #include <stdio.h>
 typedef struct{
     //unsigned al:8;
-    char al;
+    unsigned char al;
     //unsigned ah:8;
-    char ah;
+    unsigned char ah;
 
 } ax_8bit;
 
@@ -31,9 +31,17 @@ int main(void){
 
     printf("eax is 0x%x\n"       ,eax1.eax             );
     printf("ax  is 0x    %x\n"   ,eax1.axpart.ax       );
-    printf("al  is 0x      %x\n" ,eax1.axpart._8bit.al );
+    printf("al  is 0x      %x\n" ,eax1.axpart._8bit.al);
     printf("ah  is 0x    %x\n"   ,eax1.axpart._8bit.ah );
 
+    //サイズの検証
+    printf("eax size is %d\n" , sizeof eax1);
+    printf("ax  size is %d\n" , sizeof eax1.axpart.ax);
+    printf("ax  size is %d\n" , sizeof eax1.axpart._8bit);
+    printf("ah  size is %d\n" , sizeof eax1.axpart._8bit.ah);
+    printf("al  size is %d\n" , sizeof eax1.axpart._8bit.al);
+
+    //構造体・共用体のアドレスの検証
     printf("eax addr is %p\n" ,&eax1              );
     printf("eax addr is %p\n" ,&eax1.eax          );
     printf("ax  addr is %p\n" ,&eax1.axpart       );
