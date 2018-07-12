@@ -26,5 +26,7 @@ int main(){
   if(result == FAILURE){
     printf("divide is fail\n");
   }
+  printf("success num is %d\n",SUCCESS);
+  printf("failure num is %d\n",FAILURE);
 
 }
