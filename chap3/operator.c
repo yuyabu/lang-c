@@ -1,6 +1,5 @@
 #include <stdio.h>
 int main(void){
-    // Your code here!
     int a =-1;
     printf("%d\n",a);
 
@@ -12,4 +11,6 @@ int main(void){
     //char *judge_result = 0!= fixed_number ? "正の数":"0か負の数";
 
     printf("%s\n",judge_result);
+
+
 }
