@@ -50,4 +50,9 @@ int main(void){
     printf("ah  addr is %p\n" ,&eax1.axpart._8bit.ah );
     printf("al  addr is %p\n" ,&eax1.axpart._8bit.al );
 
+    printf("%p is %x\n",&eax1.axpart._8bit.al,*(&eax1.axpart._8bit.al+0));
+    printf("%p is %x\n",&eax1.axpart._8bit.al+1,*(&eax1.axpart._8bit.al+1));
+    printf("%p is %x\n",&eax1.axpart._8bit.al+2,*(&eax1.axpart._8bit.al+2));
+    printf("%p is %x\n",&eax1.axpart._8bit.al+3,*(&eax1.axpart._8bit.al+3));
+
 }
