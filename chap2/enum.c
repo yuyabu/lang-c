@@ -6,18 +6,19 @@ typedef enum
 }Result;
 
 /**
- * print result of calc a/b
- * @param  a [description]
- * @param  b [description]
- * @return b=0 FAILURE
+ * print divided result.
+ *
+ * @param  dividend [description]
+ * @param  divisor  [description]
+ * @return          [description]
  */
-Result divide(int a,int b){
+Result divide(int dividend,int divisor){
 
   if(b==0){
     return FAILURE;
   }
 
-  printf("calc result is %d\n",a/b);
+  printf("calc result is %d\n",dividend / divisor);
   return SUCCESS;
 }
 
@@ -28,5 +29,4 @@ int main(){
   }
   printf("success num is %d\n",SUCCESS);
   printf("failure num is %d\n",FAILURE);
-
 }
