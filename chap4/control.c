@@ -20,8 +20,7 @@ void nine_nine(int limit){
     printf("\n");
   }
 
-  last:
-  printf("\n");
+  last:;
 }
 
 int main(){
