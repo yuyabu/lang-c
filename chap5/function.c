@@ -6,6 +6,7 @@ int main(int args,char *argv[]){
   printf("%d\n",num);//5
 
   printf("%d\n",test(5));
+  test2();
 }
 
 /**
@@ -13,4 +14,8 @@ int main(int args,char *argv[]){
  */
 test(a){
   return 3+a;
+}
+
+int test2(){
+  printf("test\n");
 }
