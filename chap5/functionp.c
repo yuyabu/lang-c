@@ -5,6 +5,8 @@ void func2(char *str);
 int intfunc();
 int intfunc2(int i);
 
+int voidf(void);
+
 int main(){
   void(*p)();
   p = func1;
@@ -30,6 +32,12 @@ int main(){
 
    p2("test");//func1は引数なしだが、引数付きで呼ぶというデタラメなことはコンパイル可能。
    p2(1);//ポインタの型宣言の引数と一致していない型の引数でもコンパイル・実行可能なようだ。
+   //ただし警告が出た
+   // chap5/functionp.c:34:7: warning: incompatible integer to pointer conversion
+   //       passing 'int' to parameter of type 'char *' [-Wint-conversion]
+   //    p2(1);//ポインタの型宣言の引数と一致していない型の引数でもコンパイル...
+
+   p2= voidf;
 
    //引数の実験
 
@@ -99,6 +107,20 @@ int main(){
    testf(1,"3"); //コンパイル、実行成功
    testf(1,1);   //コンパイル、実行成功
 
+   //void引数と関数ポインタの実験
+
+   int (*fp1)(int a);
+   //int voidf(void);
+   fp1 = voidf;//代入可能
+   //fp1();//エラー
+   fp1(1);//実行可能
+   //voidf(1);//コンパイルエラー
+
+   int (*fp2)(void);
+   fp2 = voidf;
+   fp2();
+   //fp2(10);//コンパイルエラー
+
 }
 
 void func1(){
@@ -115,4 +137,8 @@ int intfunc2(int i){
   printf("%d\n",result);
   return result;
 
+}
+int voidf(void){
+  printf("this is voidf!\n");
+  return 1;
 }
