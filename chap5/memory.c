@@ -22,5 +22,8 @@ int main(){
   // a.out(20725,0x7fffad00f380) malloc: *** error for object 0x7f8ebd402710: pointer being freed was not allocated
   // *** set a breakpoint in malloc_error_break to debug
   // Abort trap: 6
+  //
+  char localv = 'c';
+  free(&localv);
 
 }
