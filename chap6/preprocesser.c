@@ -25,10 +25,17 @@ int main(){
     #define max 10
     printf("%d\n",max);
   }
-//  #define FLAG
-  #ifdef FLAG
-    puts("flagがdefineされている");
-  #else
-    puts("flagがdefineされていない");
-  #endif
+  {
+  //  #define FLAG
+    #ifdef FLAG
+      puts("flagがdefineされている");
+    #else
+      puts("flagがdefineされていない");
+    #endif
+  }
+  {
+    //組み込みマクロの実験
+    printf("file %s, %d line (function name : %s)\n",__FILE__,__LINE__,__func__);
+    printf("%s:%d:%s\n",__FILE__,__LINE__,__func__);
+  }
 }
