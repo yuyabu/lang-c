@@ -14,4 +14,21 @@ int main(){
     int a=5,b=4;
     printf("%d\n",max(a, ++b));
   }
+  {
+    printf("largeer + 100=%d\n",max(20,10)+100);
+  }
+  {
+    # undef max
+    # define max 5
+    printf("%d\n",max);
+    # undef max
+    #define max 10
+    printf("%d\n",max);
+  }
+//  #define FLAG
+  #ifdef FLAG
+    puts("flagがdefineされている");
+  #else
+    puts("flagがdefineされていない");
+  #endif
 }
