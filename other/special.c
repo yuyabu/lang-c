@@ -30,10 +30,7 @@ int main()
     // ^
     // 1 error generated.
   }
-
-  {
-    char *s =1;
-  }
+ß
 
 
 
