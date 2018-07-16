@@ -8,6 +8,7 @@ void sub4();
 void sub5(void);
 int main()
 {
+  {
     char str[] = {"1234"};
     sub1(str);
     sub2(str);
@@ -28,7 +29,11 @@ int main()
     // void sub5(void);
     // ^
     // 1 error generated.
+  }
 
+  {
+    char *s =1;
+  }
 
 
 
